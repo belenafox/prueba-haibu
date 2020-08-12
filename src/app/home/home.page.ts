@@ -15,8 +15,8 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.usuariosService.getUsers()
     .subscribe( resp => {
-      // console.log(resp)
-      this.usuarios.push( ...resp );
+      // @ts-ignore
+      this.usuarios.push(...resp)
     })
   }
 }

@@ -1,0 +1,25 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col>
+
+      <ion-list *ngFor="let usuario of usuarios">
+        <ion-item>
+
+          <ion-avatar slot="start">
+            <img src="../../../assets/icon/avatar.png">
+          </ion-avatar>
+        
+          <ion-label>
+            <h3>{{usuario.nombre}} {{usuario.apellido}}</h3>
+            <p>{{usuario.activo === 1 ? 'Activo' : 'Inactivo'}}</p>
+          </ion-label>
+          
+        </ion-item>
+        
+
+        
+      </ion-list>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
