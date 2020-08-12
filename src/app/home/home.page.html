@@ -7,6 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  
+  <ion-searchbar
+    (ionChange)="findUser($event)">
+  </ion-searchbar>
+
   <app-usuarios [usuarios]="usuarios"></app-usuarios>
 
 </ion-content>
