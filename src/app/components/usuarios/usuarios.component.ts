@@ -11,6 +11,7 @@ import { UsuarioComponent } from '../usuario/usuario.component';
 export class UsuariosComponent implements OnInit {
 
   @Input() usuarios: Usuario;
+  usuarioBuscado = '';
 
   constructor(public modalController: ModalController) { }
 
@@ -26,6 +27,12 @@ export class UsuariosComponent implements OnInit {
       }
     });
     modal.present();
+  }
+
+  findUser(event) {
+    // console.log(event);
+    this.usuarioBuscado = event.detail.value;
+    console.log(this.usuarioBuscado)
   }
 
 }

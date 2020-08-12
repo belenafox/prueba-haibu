@@ -10,7 +10,6 @@ import { Usuario } from '../interfaces/interfaces';
 export class HomePage implements OnInit {
 
   usuarios: Usuario[] = [];
-  usuarioBuscado = '';
 
   constructor( private usuariosService: UsuariosService) {}
 
@@ -20,11 +19,5 @@ export class HomePage implements OnInit {
       // @ts-ignore
       this.usuarios.push(...resp)
     })
-  }
-
-  findUser(event) {
-    // console.log(event);
-    this.usuarioBuscado = event.detail.value;
-    console.log(this.usuarioBuscado)
   }
 }

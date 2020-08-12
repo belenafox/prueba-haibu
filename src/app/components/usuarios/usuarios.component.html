@@ -1,8 +1,11 @@
 <ion-grid fixed>
   <ion-row>
-    <ion-col>
 
-      <ion-list *ngFor="let usuario of usuarios">
+    <ion-col>
+      <ion-searchbar
+        (ionChange)="findUser($event)">
+      </ion-searchbar>
+      <ion-list *ngFor="let usuario of usuarios | filtro: usuarioBuscado">
         <ion-item (click)="goToUser(usuario)">
 
           <ion-avatar slot="start">
