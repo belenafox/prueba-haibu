@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../services/usuarios.service';
+import { Usuario } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+  usuarios: Usuario[] = [];
+  constructor( private usuariosService: UsuariosService) {}
 
+  ngOnInit() {
+    this.usuariosService.getUsers()
+    .subscribe( resp => {
+      // console.log(resp)
+      this.usuarios.push( ...resp );
+    })
+  }
 }
