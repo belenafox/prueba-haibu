@@ -1,3 +1,48 @@
-<p>
-  usuario works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col>
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-note slot="end">{{usuario.nombre}} {{usuario.apellido}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Teléfono</ion-label>
+          <ion-note slot="end">{{ usuario.telefono }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Rut</ion-label>
+          <ion-note class="dato_custom" slot="end" color="{{rutValidado ? 'dark' : 'danger'}}">
+            {{ usuario.rut }}
+            <span class="mensaje_validacion-incorrecto" *ngIf="!rutValidado">El rut está incorrecto</span>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha de nacimiento</ion-label>
+          <ion-note class="dato_custom" slot="end" color="{{fechaValida ? 'dark' : 'danger'}}">
+            {{ usuario.fechaNacimiento }}
+            <span class="mensaje_validacion-incorrecto" *ngIf="!fechaValida">La fecha no es válida</span>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dirección</ion-label>
+          <ion-note slot="end">{{ usuario.direccion.calle }} {{ usuario.direccion.numero }} {{ usuario.direccion.comuna }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Status trabajador</ion-label>
+          <ion-note slot="end">{{usuario.activo === 1 ? 'Activo' : 'Inactivo'}}</ion-note>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

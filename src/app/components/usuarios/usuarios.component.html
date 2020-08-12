@@ -3,7 +3,7 @@
     <ion-col>
 
       <ion-list *ngFor="let usuario of usuarios">
-        <ion-item>
+        <ion-item (click)="goToUser(usuario)">
 
           <ion-avatar slot="start">
             <img src="../../../assets/icon/avatar.png">
