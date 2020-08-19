@@ -10,7 +10,7 @@ import { UsuarioComponent } from '../usuario/usuario.component';
 })
 export class UsuariosComponent implements OnInit {
 
-  @Input() usuarios: Usuario;
+  @Input() usuarios: Usuario[] = [];
   usuarioBuscado = '';
 
   constructor(public modalController: ModalController) { }
